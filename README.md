@@ -1,45 +1,29 @@
-📊 Análise de Dados de Vendas de Lojas
-🛒 Desafio - Alura Store - Análise de Lojas
+# 📊 Análise de Dados de Vendas de Lojas
+
+## 🛒 Desafio - Alura Store - Análise de Lojas
 Este projeto realiza uma análise exploratória de dados de vendas de quatro lojas, utilizando a biblioteca Pandas para manipulação de dados e Matplotlib para visualização. O objetivo é fornecer insights sobre o faturamento, as vendas por categoria, a média de avaliação dos clientes, os produtos mais e menos vendidos e o frete médio de cada loja.
 
-🔍 Visão Geral do Projeto
-O script Python ( .ipynb ) realiza as seguintes etapas:
+## 🔍 Visão Geral do Projeto
+O script Python (`.ipynb`) realiza as seguintes etapas:
 
-1. Importação de Dados:
-Carrega os dados de vendas de cada loja a partir de arquivos CSV hospedados no GitHub.
+1. **Importação de Dados:** Carrega os dados de vendas de cada loja a partir de arquivos CSV hospedados no GitHub.
+2. **Análise de Faturamento:** Calcula o faturamento total de cada loja, o faturamento médio e visualiza a distribuição do faturamento entre as lojas através de um gráfico de barras.
+3. **Análise de Vendas por Categoria:** Combina os dados de todas as lojas, calcula o faturamento por categoria em cada loja e apresenta essa informação em um gráfico de barras lado a lado.
+4. **Análise da Média de Avaliação:** Calcula a média das avaliações de compra para cada loja e exibe essa informação em um gráfico de barras.
+5. **Análise de Produtos Mais e Menos Vendidos:** Identifica o produto com maior e menor quantidade vendida em cada loja.
+6. **Análise de Frete Médio:** Calcula o custo médio de frete para cada loja.
+7. **Análise Geográfica das Vendas:** Utiliza as coordenadas de latitude e longitude apresentadas nos dados para visualizar a distribuição geográfica das vendas, o faturamento por localização e a distribuição das avaliações.
 
-2. Análise de Faturamento:
-Calcula o faturamento total de cada loja, o faturamento médio e visualiza a distribuição do faturamento entre as lojas através de um gráfico de barras.
-
-3. Análise de Vendas por Categoria:
-Combina os dados de todas as lojas, calcula o faturamento por categoria em cada loja e apresenta essa informação em um gráfico de barras lado a lado.
-
-4. Análise da Média de Avaliação:
-Calcula a média das avaliações de compra para cada loja e exibe essa informação em um gráfico de barras.
-
-5. Análise de Produtos Mais e Menos Vendidos:
-Identifica o produto com maior e menor quantidade vendida em cada loja.
-
-6. Análise de Frete Médio:
-Calcula o custo médio de frete para cada loja.
-
-7. Análise Geográfica das Vendas:
-Utiliza as coordenadas de latitude e longitude apresentadas nos dados para visualizar a distribuição geográfica das vendas, o faturamento por localização e a distribuição das avaliações.
-
-⬇️ Instalação
+## ⬇️ Instalação
 Para executar este projeto, você precisa ter o Python instalado em seu ambiente. Além disso, as seguintes bibliotecas são necessárias:
 
-Pandas: Para manipulação e análise de dados tabulares.
+- **Pandas**: Para manipulação e análise de dados tabulares.
+- **Matplotlib**: Para criação de gráficos e visualizações.
+- **NumPy**: Embora não seja explicitamente importado no código fornecido, o Matplotlib é frequentemente utilizado internamente para transações numéricas.
 
-Matplotlib: Para criação de gráficos e visualizações.
+Você pode instalar essas bibliotecas usando o pip, ou gerenciador de pacotes do Python. Abra seu terminal ou prompt de comando e execute o seguinte comando:
 
-NumPy: Embora não seja explicitamente importado no código fornecido, o Matplotlib é frequentemente utilizado internamente para transações numéricas.
-
-Você pode instalar essas bibliotecas usando o pip (ou gerenciador de pacotes do Python). Abra seu terminal ou prompt de comando e execute o seguinte comando:
-
-bash
-Copiar
-Editar
+```bash
 pip install pandas matplotlib
 📌 Dependências
 As seguintes bibliotecas Python são dependências deste projeto:
@@ -64,56 +48,86 @@ Execute como células: Execute como células de código sequencialmente, clicand
 💡 Explicação do Código
 O código Python realiza as seguintes etapas de análise:
 
-1. Importação dos Dados:
+Importação dos Dados
 python
 Copiar
 Editar
 import pandas as pd
-url1 = "https://raw.githubusercontent.com/alura-es-cursos/challenge1-data-science/main/base-de-dados-challenge-1/loja_1.csv"
-# Carregar dados para outras lojas de forma similar
-2. Análise do Faturamento:
-Calcula o faturamento total de cada loja somando os valores da coluna Preço.
 
-3. Análise de Vendas por Categoria:
-Agrupa os dados de cada loja pela coluna Categoria do Produto e calcula o número de vendas em cada categoria.
+url1 = "[URL_DO_ARQUIVO_LOJA_1]"
+url2 = "[URL_DO_ARQUIVO_LOJA_2]"
+url3 = "[URL_DO_ARQUIVO_LOJA_3]"
+url4 = "[URL_DO_ARQUIVO_LOJA_4]"
 
-4. Análise da Média de Avaliação:
-Calcula a média das avaliações de compra para cada loja.
+loja1 = pd.read_csv(url1)
+loja2 = pd.read_csv(url2)
+loja3 = pd.read_csv(url3)
+loja4 = pd.read_csv(url4)
 
-5. Análise de Produtos Mais e Menos Vendidos:
-Identifica os produtos mais e menos vendidos de cada loja.
+loja1.head()
+Análise de Faturamento
+python
+Copiar
+Editar
+faturamento_loja1 = loja1['Preço'].sum()
+faturamento_loja2 = loja2['Preço'].sum()
+faturamento_loja3 = loja3['Preço'].sum()
+faturamento_loja4 = loja4['Preço'].sum()
 
-6. Análise de Frete Médio:
-Calcula o custo médio de frete para cada loja.
+faturamento_total = faturamento_loja1 + faturamento_loja2 + faturamento_loja3 + faturamento_loja4
+faturamento_medio = faturamento_total / 4
 
+print(f"Faturamento médio das lojas: R${faturamento_medio:,.2f}")
+Análise de Vendas por Categoria
+python
+Copiar
+Editar
+vendas_por_categoria_loja1 = loja1.groupby('Categoria do Produto')['Preço'].count()
+vendas_por_categoria_loja2 = loja2.groupby('Categoria do Produto')['Preço'].count()
+vendas_por_categoria_loja3 = loja3.groupby('Categoria do Produto')['Preço'].count()
+vendas_por_categoria_loja4 = loja4.groupby('Categoria do Produto')['Preço'].count()
+🚚 Frete Médio por Loja
+python
+Copiar
+Editar
+frete_medio = lojas.groupby('Loja')['Frete'].mean()
+
+print("\nFrete Médio por Loja:")
+frete_medio
 ⚠️ Possíveis Problemas e Soluções
 Durante a execução do projeto, alguns problemas podem surgir:
 
-Erro ao acessar as URLs dos arquivos CSV:
+Erro ao acessar as URLs dos arquivos CSV: Se as URLs estiverem incorretas, o Pandas não conseguirá ler os dados.
 
-Problema: Se as URLs dos arquivos CSV estiverem incorretas, o Pandas não conseguirá ler os dados.
+Solução: Verifique se as URLs estão corretas.
 
-Solução: Verifique se as URLs estão corretas e acessíveis.
+Erro de importação de bibliotecas: Se o Pandas ou Matplotlib não estiverem instalados corretamente, ocorrerá um erro de importação.
 
-Erro de importação de bibliotecas:
-
-Problema: Se as bibliotecas Pandas ou Matplotlib não estiverem instaladas corretamente, erros de importação ocorrerão.
-
-Solução: Execute o comando pip install pandas matplotlib.
-
-Problemas com a exibição de gráficos:
-
-Problema: Em alguns ambientes, os gráficos gerados pelo Matplotlib podem não ser exibidos corretamente.
-
-Solução: No Google Colab, os gráficos são exibidos automaticamente. Se estiver no Jupyter, use %matplotlib inline para garantir que os gráficos apareçam.
+Solução: Execute pip install pandas matplotlib.
 
 ✨ Observações
 Os dados foram disponibilizados como parte de um desafio de ciências de dados da Alura.
 
-O projeto foi desenvolvido com o objetivo de aprimorar a análise e visualização de dados de vendas.
-
 🤝 Contribuições
-Contribuições para este projeto são bem-vindas. Sinta-se à vontade para propor melhorias ou enviar pull requests com suas modificações.
+Contribuições para este projeto são bem-vindas. Sinta-se à vontade para proporcionar melhorias ou enviar pull requests com suas modificações.
 
 💾 Licença
 Este projeto não possui uma licença específica definida. O uso e distribuição devem seguir as políticas dos dados originais e as diretrizes de uso do GitHub.
+
+👩‍💻 Sobre o Autor
+Desenvolvido por Raylaine Barreto.
+
+markdown
+Copiar
+Editar
+
+### Explicação dos elementos de formatação no Markdown:
+
+- **Títulos** são criados com `#` (1 para título principal, 2 para subtítulos, e assim por diante).
+- **Texto em negrito**: Usando `**texto**`.
+- **Links**: Usando `[Texto do Link](URL)`.
+- **Listas ordenadas**: Usando números seguidos de um ponto (`1. Item`).
+- **Listas não ordenadas**: Usando asterisco (`* Item`) ou hífen (`- Item`).
+- **Blocos de código**: Usando crase tripla (```) para criar blocos de código formatados.
+  
+---
