@@ -24,7 +24,7 @@ Para executar este projeto, você precisa ter o Python instalado em seu ambiente
 Você pode instalar essas bibliotecas usando o pip, ou gerenciador de pacotes do Python. Abra seu terminal ou prompt de comando e execute o seguinte comando:
 
 pip install pandas matplotlib
-📌 Dependências
+## 📌 Dependências
 As seguintes bibliotecas Python são dependências deste projeto:
 
 pandas (>= 1.0.0): Utilizado para leitura e manipulação dos dados das lojas a partir de arquivos CSV hospedados em URLs.
@@ -33,7 +33,7 @@ matplotlib (>= 3.0.0): Empregada para gerar gráficos de barras que visualizam o
 
 numpy (>= 1.18.0): Usado internamente pelo Matplotlib para cálculos numéricos, como o cálculo da média de faturamento para a linha de referência no gráfico.
 
-##⚙️ Execução no Google Colab
+## ⚙️ Execução no Google Colab
 O Google Colab é um ambiente Jupyter Notebook hospedado na nuvem que permite executar o código Python sem a necessidade de configuração local. Para executar este projeto no Colab, siga estes passos:
 
 Abra o Google Colab: Acesse https://colab.research.google.com/ no seu navegador.
@@ -44,7 +44,7 @@ Copie e cole o código: Copie todo o código Python fornecido e cole em uma cél
 
 Execute como células: Execute como células de código sequencialmente, clicando no botão "play" (executar) ao lado de cada célula ou pressionando Shift + Enter. O Colab já possui as bibliotecas Pandas e Matplotlib pré-instaladas, então você não precisa executar o comando !pip install novamente, a menos que necessite de versões específicas ou outras bibliotecas adicionais.
 
-##💡 Explicação do Código
+## 💡 Explicação do Código
 O código Python realiza as seguintes etapas de análise:
 
 Importação dos Dados
@@ -85,7 +85,7 @@ vendas_por_categoria_loja1 = loja1.groupby('Categoria do Produto')['Preço'].cou
 vendas_por_categoria_loja2 = loja2.groupby('Categoria do Produto')['Preço'].count()
 vendas_por_categoria_loja3 = loja3.groupby('Categoria do Produto')['Preço'].count()
 vendas_por_categoria_loja4 = loja4.groupby('Categoria do Produto')['Preço'].count()
-##🚚 Frete Médio por Loja
+## 🚚 Frete Médio por Loja
 python
 Copiar
 Editar
@@ -93,7 +93,7 @@ frete_medio = lojas.groupby('Loja')['Frete'].mean()
 
 print("\nFrete Médio por Loja:")
 frete_medio
-##⚠️ Possíveis Problemas e Soluções
+## ⚠️ Possíveis Problemas e Soluções
 Durante a execução do projeto, alguns problemas podem surgir:
 
 Erro ao acessar as URLs dos arquivos CSV: Se as URLs estiverem incorretas, o Pandas não conseguirá ler os dados.
@@ -104,14 +104,14 @@ Erro de importação de bibliotecas: Se o Pandas ou Matplotlib não estiverem in
 
 Solução: Execute pip install pandas matplotlib.
 
-##✨ Observações
+## ✨ Observações
 Os dados foram disponibilizados como parte de um desafio de ciências de dados da Alura.
 
-##🤝 Contribuições
+## 🤝 Contribuições
 Contribuições para este projeto são bem-vindas. Sinta-se à vontade para proporcionar melhorias ou enviar pull requests com suas modificações.
 
-##💾 Licença
+## 💾 Licença
 Este projeto não possui uma licença específica definida. O uso e distribuição devem seguir as políticas dos dados originais e as diretrizes de uso do GitHub.
 
-##👩‍💻 Sobre o Autor
-Desenvolvido por Felipe Vianna
+## 👩‍💻 Sobre o Autor
+Desenvolvido por Felipe Vianna [LinkedIn](https://www.linkedin.com/in/felipe-carnevale-069a60362)
